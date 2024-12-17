@@ -1,0 +1,34 @@
+﻿@model GestionConstructoraUH.Models.Proyecto
+
+<h2>Crear Nuevo Proyecto</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="CodigoProyecto">Código Proyecto</label>
+        <input asp-for="CodigoProyecto" class="form-control" required />
+        <span asp-validation-for="CodigoProyecto" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NombreProyecto">Nombre Proyecto</label>
+        <input asp-for="NombreProyecto" class="form-control" required />
+        <span asp-validation-for="NombreProyecto" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaInicio">Fecha de Inicio</label>
+        <input asp-for="FechaInicio" class="form-control" type="date" required />
+        <span asp-validation-for="FechaInicio" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaFin">Fecha de Finalización</label>
+        <input asp-for="FechaFin" class="form-control" type="date" />
+        <span asp-validation-for="FechaFin" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GestionConstructoraUH.Models.Empleado>
+
+<h2>Lista de Empleados</h2>
+
+<a asp-action="Create" class="btn btn-primary">Nuevo Empleado</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Carnet Único</th>
+            <th>Nombre Completo</th>
+            <th>Correo Electrónico</th>
+            <th>Salario</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empleado in Model)
+        {
+            <tr>
+                <td>@empleado.IdEmpleado</td>
+                <td>@empleado.CarnetUnico</td>
+                <td>@empleado.NombreCompleto</td>
+                <td>@empleado.CorreoElectronico</td>
+                <td>@empleado.Salario</td>
+                <td>@empleado.CategoriaLaboral</td>
+                <td>
+                    <form asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@empleado.IdEmpleado" />
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

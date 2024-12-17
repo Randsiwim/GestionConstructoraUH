@@ -1,0 +1,28 @@
+﻿@model GestionConstructoraUH.Models.Proyecto
+
+<h2>Editar Proyecto</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="IdProyecto" />
+
+    <div class="form-group">
+        <label for="CodigoProyecto">Código Proyecto</label>
+        <input asp-for="CodigoProyecto" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="NombreProyecto">Nombre Proyecto</label>
+        <input asp-for="NombreProyecto" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="FechaInicio">Fecha de Inicio</label>
+        <input asp-for="FechaInicio" class="form-control" type="date" required />
+    </div>
+    <div class="form-group">
+        <label for="FechaFin">Fecha de Finalización (opcional)</label>
+        <input asp-for="FechaFin" class="form-control" type="date" />
+    </div>
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>

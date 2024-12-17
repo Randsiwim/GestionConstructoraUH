@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<!-- Encabezado -->
+<div class="text-center my-4">
+    <h1 class="display-4">Bienvenido a la Gestión Constructora UH</h1>
+    <p class="lead">Administra empleados, proyectos y asignaciones de manera eficiente.</p>
+</div>
+
+<!-- Contenedor Principal -->
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- Tarjeta de Empleados -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-primary">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary">Gestión de Empleados</h5>
+                    <p class="card-text">Visualiza y administra la información de los empleados.</p>
+                    <a asp-controller="Empleados" asp-action="Index" class="btn btn-primary btn-lg">
+                        Ir a Empleados
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta de Proyectos -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-success">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-success">Gestión de Proyectos</h5>
+                    <p class="card-text">Administra los proyectos activos y en desarrollo.</p>
+                    <a asp-controller="Proyectos" asp-action="Index" class="btn btn-success btn-lg">
+                        Ir a Proyectos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta de Asignaciones -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-info">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-info">Gestión de Asignaciones</h5>
+                    <p class="card-text">Asigna empleados a proyectos y visualiza asignaciones.</p>
+                    <a asp-controller="Asignaciones" asp-action="Index" class="btn btn-info btn-lg">
+                        Ir a Asignaciones
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

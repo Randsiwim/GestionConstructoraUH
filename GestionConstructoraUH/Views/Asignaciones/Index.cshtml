@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GestionConstructoraUH.Models.Asignacion>
+
+<h2>Asignaciones de Empleados a Proyectos</h2>
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-primary">Nueva Asignación</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Empleado</th>
+            <th>Proyecto</th>
+            <th>Fecha de Asignación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var asignacion in Model)
+        {
+            <tr>
+                <td>@asignacion.IdAsignacion</td>
+                <td>@asignacion.Empleado.NombreCompleto</td>
+                <td>@asignacion.Proyecto.NombreProyecto</td>
+                <td>@asignacion.FechaAsignacion.ToShortDateString()</td>
+                <td>
+                    <form asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@asignacion.IdAsignacion" />
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar esta asignación?');">
+                            Eliminar
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
